@@ -47,8 +47,8 @@ func init() {
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cmdtest.yaml)")
 	rootCmd.PersistentFlags().Bool("viper", true, "use Viper for configuration")
 
-	rootCmd.AddCommand(addCmd)
-	rootCmd.AddCommand(initCmd)
+	rootCmd.AddCommand(testCmd)
+
 }
 
 func er(msg interface{}) {

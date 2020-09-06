@@ -30,9 +30,10 @@ var (
 	userLicense string
 
 	rootCmd = &cobra.Command{
-		Use:   "cmdtest",
-		Short: "An example cmdline impl",
-		Long:  `An example cmdline impl.`,
+		Use:     "cmdtest",
+		Short:   "An example cmdline impl",
+		Long:    `An example cmdline impl.`,
+		Version: "v1.0",
 	}
 )
 
@@ -42,12 +43,11 @@ func Execute() error {
 }
 
 func init() {
+
 	cobra.OnInitialize(initConfig)
 
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cmdtest.yaml)")
 	rootCmd.PersistentFlags().Bool("viper", true, "use Viper for configuration")
-
-	rootCmd.AddCommand(testCmd)
 
 }
 
